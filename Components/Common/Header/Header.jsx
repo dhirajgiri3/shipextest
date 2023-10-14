@@ -26,6 +26,13 @@ const Navbar = styled.nav`
   z-index: 1000;
   border-radius: 100px;
 
+  .right-header {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+  }
+
   @media screen and (max-width: 1024px) {
     height: 6vh;
   }
@@ -75,13 +82,12 @@ const LogoImage = styled(Image)`
 
 const MenuLink = styled.div`
   position: relative; /* Add relative positioning */
-  font-size: 0.9rem;
+  font-size: var(--para);
   color: var(--text-color);
   text-decoration: none;
   transition: color 0.2s ease-in-out;
   font-family: var(--font);
   cursor: pointer;
-  /* mix-blend-mode: difference; */
 
   &:hover {
     color: var(--secondary-color);
@@ -100,10 +106,12 @@ const MenuLink = styled.div`
     position: absolute;
     top: 200%;
     left: calc(-100% + 2rem);
-    background-color: var(--primary-color);
+    background-color: #1f1f1f;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     border-radius: 20px;
-    padding: 1rem;
-    z-index: 10000;
+    padding: 1rem 2rem;
+    z-index: 1000;
     opacity: 0;
     transform-origin: top center;
     min-width: 15rem;
@@ -123,13 +131,13 @@ const MenuLink = styled.div`
     & a {
       display: block;
       padding: 5px 10px;
-      color: var(--white-bg);
+      color: var(--white);
       text-decoration: none;
       white-space: nowrap;
       transition: color 0.3s ease-in-out;
 
       &:hover {
-        color: var(--white);
+        color: #ffffff99;
       }
     }
   }
@@ -154,36 +162,6 @@ const LoginLinkMobile = styled(Link)`
 
   @media screen and (max-width: 768px) {
     font-size: 1rem;
-  }
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 0%;
-    height: 100%;
-    background: var(--secondary-color);
-    border-radius: 100px;
-    transition: width 0.3s ease-in-out;
-    z-index: -1;
-    transform-origin: right;
-  }
-
-  &:hover {
-    &::before {
-      width: 100%;
-    }
-  }
-`;
-
-const CtaButton = styled(Link)`
-  @media screen and (max-width: 1024px) {
-    margin-right: 5rem;
-  }
-
-  @media screen and (max-width: 768px) {
-    display: none;
   }
 `;
 
@@ -216,7 +194,6 @@ const Bar = styled.div`
     display: block;
 
     h1 {
-      font-family: var(--normal-font-gort);
       font-family: var(--font);
       font-size: 1.3rem;
       color: var(--text-color);
@@ -242,6 +219,19 @@ const H1 = styled.h1`
   color: var(--text-color);
   text-decoration: none;
   letter-spacing: 0.5px;
+`;
+
+const TrackOrder = styled(Link)`
+  font-size: var(--para);
+  color: var(--text-color);
+  text-decoration: none;
+  transition: 0.3s ease-in-out;
+  font-family: var(--bold);
+  border-bottom: 2px solid var(--secondary-color);
+
+  &:hover {
+    color: var(--secondary-color);
+  }
 `;
 
 const variants = {
@@ -365,10 +355,13 @@ export default function Header() {
                       whileInView="visible"
                       exit="hidden"
                     >
-                      <Link href="/resource1">Resource 1</Link>
-                      <Link href="/resource2">Resource 2</Link>
-                      <Link href="/resource2">Resource 2</Link>
-                      <Link href="/resource2">Resource 2</Link>
+                      <Link href="/resource1">Shipping Rate Calculator</Link>
+                      <Link href="/resource2">
+                        Wolumetric Weight Calculator
+                      </Link>
+                      <Link href="/resource2">Blogs</Link>
+                      <Link href="/resource2">Shipping Terms & Conditions</Link>
+                      <Link href="/resource2">FAQs</Link>
                     </motion.div>
                   )}
                 </AnimatePresence>
@@ -384,15 +377,18 @@ export default function Header() {
               <MenuLink href="/contact">Contact</MenuLink>
             </MenuItem>
             <MenuItem>
-              <CtaButton href="/">
-                <CtaButtonWrapper>Book Shipment</CtaButtonWrapper>
-              </CtaButton>
+              <MenuLink href="/">Book Shipment</MenuLink>
             </MenuItem>
           </MenuList>
         </Menu>
-        <LoginLinkMobile className="pc" href="/login">
-          Login/signUp
-        </LoginLinkMobile>
+        <div className="right-header">
+          <TrackOrder className="pc" href="/trackorder">
+            Track Order
+          </TrackOrder>
+          <LoginLinkMobile className="pc" href="/login">
+            Login/signUp
+          </LoginLinkMobile>
+        </div>
         <Bar onClick={sidebarToggle}>
           <H1>Menu</H1>
         </Bar>

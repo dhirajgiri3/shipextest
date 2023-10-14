@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import React from "react";
 import styled from "styled-components";
 
@@ -12,7 +11,7 @@ const TimelineContainer = styled.div`
   margin-top: 0;
   overflow: hidden;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     margin-top: 5rem;
   }
 
@@ -22,7 +21,7 @@ const TimelineContainer = styled.div`
     height: 100%;
     position: relative;
     z-index: 1;
-    background-image: url("https://res.cloudinary.com/divbobkmd/image/upload/v1694679619/big-ship_ci1nnu.png");
+    background: #1f1f1f;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -43,10 +42,10 @@ const TimelineContainer = styled.div`
         font-family: var(--extra);
         color: var(--white);
         font-size: var(--heading-big);
-        padding: 2rem 0;
+        padding-top: 2rem;
 
-        @media screen and (max-width: 768px) {
-          font-size: var(--heading);
+        @media screen and (max-width: 767px) {
+          font-size: var(--heading-small);
         }
       }
 
@@ -61,7 +60,6 @@ const TimelineContainer = styled.div`
       .container {
         padding: 15px 30px;
         position: relative;
-        background: inherit;
         width: 50%;
       }
 
@@ -81,7 +79,7 @@ const TimelineContainer = styled.div`
         top: calc(50% - 8px);
         right: -10px;
         background: #ffffff;
-        border: 2px solid var(--secondary-color);
+        border: 2px solid #00c27c;
         border-radius: 16px;
         z-index: 1;
       }
@@ -97,7 +95,7 @@ const TimelineContainer = styled.div`
         height: 2px;
         top: calc(50% - 0px);
         right: 8px;
-        background: var(--secondary-color);
+        background: #00c27c;
         z-index: 1;
       }
 
@@ -106,36 +104,38 @@ const TimelineContainer = styled.div`
       }
 
       .container .content {
-        padding: 30px 90px 30px 30px;
-        background: #091f4199;
-        backdrop-filter: blur(10px);
         position: relative;
-        border-radius: 0 500px 500px 0;
         transition: all 0.5s ease-in-out;
       }
 
+      .container.left .content,
       .container.right .content {
-        padding: 30px 30px 30px 90px;
-        border-radius: 500px 0 0 500px;
+        background-image: url("https://res.cloudinary.com/divbobkmd/image/upload/v1697289408/first-bg_ktnyur.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        padding: 30px 60px;
+        border-radius: 100px;
+        border: 2px solid #00c27c;
       }
 
       .container .content h2 {
         font-size: var(--heading-small);
         font-weight: 700;
-        color: var(--white-bg);
+        color: var(--text-color);
         font-family: var(--bold);
       }
 
       .container .content p {
         margin: 0;
         font-size: var(--para-mini);
-        color: var(--text-para);
+        color: var(--text-grey);
         font-weight: 300;
         font-family: var(--light-font);
         letter-spacing: 0.5px;
       }
 
-      @media (max-width: 768px) {
+      @media (max-width: 767px) {
         .timeline::after {
           left: 20px;
         }
@@ -173,7 +173,7 @@ const TimelineContainer = styled.div`
         .container.left .content,
         .container.right .content {
           padding: 30px 30px 30px 90px;
-          border-radius: 500px 0 0 500px;
+          border-radius: 20px;
         }
       }
     }
@@ -183,19 +183,6 @@ const TimelineContainer = styled.div`
 const leftvariants = {
   hidden: {
     x: -100,
-  },
-  visible: {
-    x: 0,
-
-    transition: {
-      duration: 1,
-      ease: "easeInOut",
-    },
-  },
-};
-const rightvariants = {
-  hidden: {
-    x: 100,
   },
   visible: {
     x: 0,

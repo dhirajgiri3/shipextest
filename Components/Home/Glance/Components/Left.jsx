@@ -147,7 +147,7 @@ function Left() {
           className="second comp"
         >
           <Image src={img2} alt="25000+ Pincodes" />
-          <h1>25K+ Shipping Partner</h1>
+          <h1>25+ Shipping Partner</h1>
           <p>
             Our collaboration with 25+ shipping partners allows us to offer a
             diverse range of shipping solutions tailored to your specific needs.

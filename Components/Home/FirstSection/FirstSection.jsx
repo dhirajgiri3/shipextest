@@ -209,7 +209,7 @@ function FirstSection() {
         <BackgroundImage alt="shipexindia first section background" src={bg} />
         <ContentContainer>
           <Top />
-          <BottomContainer>
+          {/* <BottomContainer>
             <Heading3>Track Your Shipment</Heading3>
             <InputSection>
               <InputContainer>
@@ -220,7 +220,7 @@ function FirstSection() {
               </InputContainer>
               <Button>Track Now</Button>
             </InputSection>
-          </BottomContainer>
+          </BottomContainer> */}
         </ContentContainer>
       </FirstSectionContainer>
     </>

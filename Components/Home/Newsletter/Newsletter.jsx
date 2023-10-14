@@ -1,5 +1,4 @@
 import styled from "@emotion/styled";
-import { motion } from "framer-motion";
 import React from "react";
 
 const HomeNewsletterContainer = styled.div`
@@ -9,13 +8,15 @@ const HomeNewsletterContainer = styled.div`
   z-index: 0;
   margin: 5rem 0;
   overflow: hidden;
+  background: #f1f1f1;
+  margin-top: 0;
 
   @media screen and (max-width: 1024px) {
     height: 30vh;
   }
 
   @media screen and (max-width: 768px) {
-    margin: 3rem 0;
+    margin-top: 0;
     height: 60vh;
   }
 
@@ -95,7 +96,7 @@ const HomeNewsletterContainer = styled.div`
         font-size: var(--para);
         font-family: var(--light-font);
         color: var(--text-grey);
-        background: #f7f7f7;
+        background: #fff;
 
         @media screen and (max-width: 768px) {
           width: 90vw;
@@ -151,14 +152,7 @@ function Newsletter() {
   return (
     <div>
       <HomeNewsletterContainer>
-        <div className="bgvideo">
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline="true"
-            src="https://res.cloudinary.com/divbobkmd/video/upload/v1694895505/grow_iqfma3.mp4"
-          ></video>
+
           <div className="content">
             <div className="title">Let's Grow Together</div>
             <div className="subtitle">
@@ -170,7 +164,6 @@ function Newsletter() {
               <button>Subscribe</button>
             </div>
           </div>
-        </div>
       </HomeNewsletterContainer>
     </div>
   );

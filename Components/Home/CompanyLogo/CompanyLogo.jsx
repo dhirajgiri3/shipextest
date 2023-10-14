@@ -1,7 +1,6 @@
 import React from "react";
 import styles from "./css/CompanyLogo.module.css";
 import Image from "next/image";
-
 import img1 from "@/Assets/Companylogo/1.png";
 import img2 from "@/Assets/Companylogo/2.jpg";
 import img3 from "@/Assets/Companylogo/3.png";

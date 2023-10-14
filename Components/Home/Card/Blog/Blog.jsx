@@ -12,6 +12,8 @@ const BlogContainer = styled.div`
   align-items: center;
   justify-content: center;
   padding: 5rem 10rem;
+  padding-bottom: 0;
+
 
   .heading {
     font-family: var(--extra);
@@ -27,11 +29,13 @@ const BlogContainer = styled.div`
   }
 
   @media screen and (max-width: 1024px) {
-    padding: 5rem;
+    padding: 0 5rem;
+    margin-top: 5rem;
+  
   }
 
   @media screen and (max-width: 768px) {
-    padding: 5rem 1rem;
+    padding: 0rem 1rem;
   }
 `;
 

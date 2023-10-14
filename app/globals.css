@@ -59,7 +59,9 @@
 
   --heading: 2.5rem;
 
-  --heading-small: 1.5rem;
+  --heading-small: 1.7rem;
+
+  --norm : 1rem;
 
   --para: 0.9rem;
 
@@ -81,7 +83,7 @@
 
   --secondary-color: #5065f9;
 
-  --secondary-color-bg: #5055f9;
+  --secondary-color-bg: #5980ff;
 
   --extra: "manrope-extra";
 

@@ -66,9 +66,9 @@ const HomeServiceContainer = styled.div`
 
     @media screen and (max-width: 768px) {
       width: 95%;
-      font-size: var(--heading-small);
+      font-size: var(--norm);
       margin-bottom: 2rem;
-      text-align: left;
+      text-align: center;
     }
   }
 

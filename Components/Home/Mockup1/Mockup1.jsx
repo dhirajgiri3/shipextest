@@ -7,14 +7,14 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 5rem 10rem;
+  padding: 0rem 10rem;
   height: 100%;
   width: 100%;
   padding-bottom: 0;
   gap: 1rem;
 
   @media screen and (max-width: 1024px) {
-    padding: 5rem 5rem;
+    padding: 0rem 5rem;
     padding-bottom: 0;
   }
 
@@ -34,7 +34,7 @@ const Heading = styled.div`
     text-align: center;
     font-family: var(--bold);
     font-size: var(--heading);
-    color: var(--white-bg);
+    color: var(--text-color);
     letter-spacing: -1px;
     font-weight: 700;
 
@@ -53,13 +53,13 @@ const Heading = styled.div`
   p {
     font-family: var(--font);
     font-size: var(--para);
-    color: var(--text-para);
+    color: var(--text-color);
     text-align: center;
     width: 70%;
     line-height: 1.5;
 
     @media screen and (max-width: 768px) {
-      width: 90%;
+      width: 100%;
     }
   }
 `;
